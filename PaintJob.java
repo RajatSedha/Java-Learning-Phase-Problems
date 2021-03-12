@@ -1,7 +1,7 @@
 public class PaintJob {
     public static void main(String[] args) {
-        System.out.println(getBucketCount(3.4, 2.1, 1.5, 2)); // you can add your own parameters here
-        System.out.println(getBucketCount(3.4, 2.1, 1.5));  // you can add your own parameters here
+        System.out.println(getBucketCount(3.4, 2.1, 1.5, 2));
+        System.out.println(getBucketCount(3.4, 2.1, 1.5));
     }
 
     public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets) {
@@ -20,5 +20,11 @@ public class PaintJob {
         }
         double area = width * height;
         return (int) Math.ceil(area / areaPerBucket);
+    }
+    public static double getBucketCount(double area, double areaPerBucket){
+        if(area<=0||areaPerBucket<=0){
+            return -1;
+        }
+        return (int)Math.ceil(area/areaPerBucket);
     }
 }
